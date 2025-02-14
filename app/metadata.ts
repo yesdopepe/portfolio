@@ -50,14 +50,5 @@ export const metadata: Metadata = {
     creator: "@Ade_the_great",
     images: ["https://i.ibb.co/FKMqc28/adeola-badero.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      "max-image-preview": "large",
-    },
-  },
   category: "technology",
 };
