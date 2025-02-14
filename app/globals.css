@@ -1,33 +1,100 @@
 @tailwind base;
+h1 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+h2 {
+  @apply text-xl;
+  @apply font-bold;
+}
+h3 {
+  @apply text-lg;
+  @apply font-bold;
+}
+
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background: rgb(2, 0, 36);
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(4, 127, 152, 0.562) 100%
+  );
+  color: white;
+  overscroll-behavior: none;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    /* background-color: #d9d9d91f; /* Matches the theme */
+    background-color: #333;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    /* background-color: #3c84c7; /* Matches the theme */
+    background-color: #666;
+    border-radius: 5px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.h-image {
+  -webkit-mask-image: url("../public/black.png");
+  -webkit-mask-position: center;
+  -webkit-mask-size: 390px 390px;
+  -webkit-mask-repeat: no-repeat;
+  z-index: -10;
+  /* transform: rotate(-15deg); */
+  /* Since I cannot achieve the particular effect I wanted to create, I can make it scroll */
+}
+
+@media (max-width: 1280px) {
+  .h-image {
+    -webkit-mask-size: 300px 300px;
   }
+}
+
+@media (max-width: 1024px) {
+  .h-image {
+    -webkit-mask-size: 300px 300px;
+  }
+}
+
+@media (max-width: 415px) {
+  .h-image {
+    -webkit-mask-size: 270px 270px;
+  }
+}
+
+/* CARD ANIMATIONS */
+.card {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+/* .card.flipped,
+.card .back {
+  transform: perspective(300px) rotateY(180deg);
+} */
+
+/* .card .back {
+  transition: opacity 0.3s ease 1s;
+} */
+
+.custom-toast {
+  background-color: #081e32 !important;
+
+  .Toastify__progress-bar {
+    background-color: #548fba;
+  }
+}
+
+.std-backdrop-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }

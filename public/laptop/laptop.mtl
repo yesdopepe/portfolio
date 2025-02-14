@@ -1,0 +1,38 @@
+newmtl code
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Screenshot_2025-02-13_201247.png
+newmtl Keyboard
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Emission_keyboard.jpg
+newmtl Body
+Kd 0.780 0.780 0.780
+d 1.000
+newmtl Connector
+Kd 0.000 0.000 0.000
+d 1.000
+newmtl Body 1
+Kd 0.780 0.780 0.780
+d 1.000
+newmtl Display Rim
+Kd 0.078 0.078 0.078
+d 1.000
+newmtl Rubber
+Kd 0.000 0.000 0.000
+d 1.000
+newmtl Connectors
+Kd 0.000 0.000 0.000
+d 1.000
+newmtl Touchpad
+Kd 0.690 0.690 0.690
+d 1.000
+newmtl Rubber 1
+Kd 0.000 0.000 0.000
+d 1.000
+newmtl Bottom Screws
+Kd 0.741 0.741 0.741
+d 1.000
+newmtl Speaker
+Kd 0.000 0.000 0.000
+d 1.000

@@ -1,13 +1,22 @@
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
+"use client";
+import Hero from "./components/hero-section/Hero";
+import Works from "./components/work-section/Works";
+import About from "./components/about-section/About";
+import Contact from "./components/contact+footer/Contact";
+import Footer from "./components/contact+footer/Footer";
+import { initialBlobityOptions } from "@/utils/blobity.config";
+import useBlobity from "blobity/lib/react/useBlobity";
+
 export default function Home() {
+  const blobity = useBlobity(initialBlobityOptions);
+
   return (
-   <div className="flex-1">
-    <Hero/>
-    <Skills/>
-    <Projects/>a
-   </div>)
+    <main>
+      <Hero />
+      <Works />
+      <About />
+      <Contact />
+      <Footer />
+    </main>
+  );
 }
