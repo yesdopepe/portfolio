@@ -11,7 +11,6 @@ export async function GET() {
         Authorization: `Bearer ${STRAPI_API_KEY}`
       }
     });
-    console.log(response.data);
     return NextResponse.json(response.data);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch projects' }, { status: 500 });

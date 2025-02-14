@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   delay,
   easeIn,
@@ -16,7 +16,6 @@ import { useView } from "@/contexts/ViewContext";
 import { Canvas } from "@react-three/fiber";
 import {Hero3DScene} from "./Hero3DScene";
 import { OrbitControls } from "@react-three/drei";
-import wave from "./wave.json";
 import Lottie from "lottie-react";
 
 export default function Hero() {
@@ -58,6 +57,16 @@ export default function Hero() {
     rootMargin: "-100px 0px",
   });
 
+  const [isMounted, setIsMounted] = useState(false);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+    fetch('/wave.json')
+      .then(response => response.json())
+      .then(data => setAnimationData(data));
+  }, []);
+
   useEffect(() => {
     if (inView) setSectionInView("home");
   }, [inView, setSectionInView]);
@@ -80,7 +89,7 @@ export default function Hero() {
           <p className="text-white/60 text-xl smm:text-2xl mb-3 smm:mb-0 lg:text-3xl col-span-6">
             Hey, there!
           </p>
-          <Lottie style={{height:30}} loop={3} animationData={wave} />
+          {animationData && <Lottie style={{height:30}} loop={3} animationData={animationData} />}
         </motion.div>
         <motion.h1
           className="text-[32px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"
@@ -108,9 +117,8 @@ export default function Hero() {
       </div>
 
       {/* IMAGE */}
-      {typeof window !== "undefined" && (
+      {isMounted && (
         <div data-blobity-tooltip="Interact with me!" className="w-full sm:w-[40%] h-[400px] sm:h-[500px] relative z-10">
-
           <Canvas
             camera={{ position: [0, 0, 5], fov: 45 }}
             style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 100 }}
