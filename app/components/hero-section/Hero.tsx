@@ -16,7 +16,7 @@ import { useView } from "@/contexts/ViewContext";
 import { Canvas } from "@react-three/fiber";
 import {Hero3DScene} from "./Hero3DScene";
 import { OrbitControls } from "@react-three/drei";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 
 export default function Hero() {
   const handWaveAnimation = {
@@ -26,7 +26,11 @@ export default function Hero() {
       ease: easeInOut,
     },
   };
-
+  const DynamicComponentWithNoSSR = dynamic(
+    () => import("lottie-react"),
+    { ssr: false,
+     }
+  )
   const animateIn1 = {
     opacity: [0, 1],
     y: ["1rem", "0px"],
@@ -89,7 +93,7 @@ export default function Hero() {
           <p className="text-white/60 text-xl smm:text-2xl mb-3 smm:mb-0 lg:text-3xl col-span-6">
             Hey, there!
           </p>
-          {animationData && <Lottie style={{height:30}} loop={3} animationData={animationData} />}
+          {animationData && <DynamicComponentWithNoSSR style={{height:30}} loop={3} animationData={animationData} />}
         </motion.div>
         <motion.h1
           className="text-[32px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"
