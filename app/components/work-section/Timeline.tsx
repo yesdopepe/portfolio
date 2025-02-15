@@ -22,14 +22,14 @@ export default function Timeline() {
   useEffect(() => {
     const fetchExperiences = async () => {
       try {
-        const response = await fetch('/api/experience');
+        const response = await fetch("/api/experience");
         if (!response.ok) {
-          throw new Error('Failed to fetch experiences');
+          throw new Error("Failed to fetch experiences");
         }
         const data = await response.json();
         setTimelineData(data);
       } catch (error) {
-        console.error('Error fetching experiences:', error);
+        console.error("Error fetching experiences:", error);
       } finally {
         setLoading(false);
       }
