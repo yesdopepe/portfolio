@@ -27,7 +27,7 @@ export default function About() {
         charSpace={"mr-[0.001em]"}
         className={`uppercase ${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80`}
       >
-        I amplify brand voices through the web
+        I build intelligent solutions with AI
       </AnimatedTitle>
 
       <div className="grid grid-cols-1 text-justify gap-8 mt-6">
@@ -36,7 +36,7 @@ export default function About() {
   My passion lies in leveraging cutting-edge AI and software development to create impactful business solutions. Whether it’s developing intelligent web and mobile applications, streamlining eCommerce platforms, or building AI-driven solutions for automated processes, I thrive on taking businesses from their current state to their ideal future while iteratively enhancing performance over time.
 </AnimatedBody>
 <AnimatedBody className="leading-[34px] md:leading-[39px]">
-  Since writing my first lines of code in late 2019, I’ve continually expanded my expertise across multiple domains, including AI research, data science, and UI/UX design. My journey has led me to work on AI-driven platforms, large-scale hackathon projects, and AI automation solutions for cybersecurity and edge computing—each challenge further refining my problem-solving abilities.
+  Since writing my first lines of code in late 2020, I’ve continually expanded my expertise across multiple domains, including AI research, data science, and Fullstack development. My journey has led me to work on AI-driven platforms, large-scale projects, and AI automation solutions for cybersecurity and edge computing—each challenge further refining my problem-solving abilities.
 </AnimatedBody>
 <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
   Every project I take on is an opportunity for growth. I strive to deliver solutions that not only meet technical excellence but also empower businesses to achieve their goals confidently. Want to dive deeper? Here’s 
