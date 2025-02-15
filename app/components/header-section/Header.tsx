@@ -31,8 +31,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed max-w-[90%] xl:max-w-[1223px] w-full z-10 select-none">
-        <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-black/40 bg-gradient-to-r from-[#d9d9d908] to-[#73737308] mt-4 sm:mt-8 std-backdrop-blur">
+      <div className="fixed max-w-[90%] xl:max-w-[1223px] w-full z-30 select-none">
+        <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-black/40 bg-gradient-to-r from-[#d9d9d908] to-[#73737308] mt-4 md:mt-8 std-backdrop-blur">
           <Link 
             href="/#home"
             onClick={(e) => handleNavigation(e, '/#home')}
@@ -48,11 +48,11 @@ export default function Header() {
           </Link>
           <Icon
             onClick={() => setMenuOpen(!menuOpen)}
-            className="cursor-pointer flex sm:hidden text-2xl"
+            className="cursor-pointer flex md:hidden text-2xl"
             icon={`${menuOpen ? "gg:close" : "lucide:menu"}`}
           />
 
-          <ul className="hidden sm:flex gap-8 lg:gap-12 text-white/25">
+          <ul className="hidden md:flex gap-8 lg:gap-12 text-white/25">
             <Link
               href="/#home"
               onClick={(e) => handleNavigation(e, '/#home')}
@@ -93,7 +93,7 @@ export default function Header() {
               Blog
             </Link>
           </ul>
-          <div className="gap-5 text-xl hidden sm:flex">
+          <div className="gap-5 text-xl hidden md:flex">
             <Link 
               target="_blank" 
               href="https://www.linkedin.com/in/yamen-kashkash-25660a291/" 

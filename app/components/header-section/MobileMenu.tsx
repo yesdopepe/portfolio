@@ -26,7 +26,7 @@ export default function MobileMenu({ onMenuOpen, handleNavigation }: MobileMenuP
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="grid z-10 items-center grid-cols-2 sm:hidden px-6 py-5 fixed top-12 rounded-2xl bg-black/40 bg-gradient-to-r from-[#d9d9d908] max-w-[90%] w-full to-[#73737308] mt-12 sm:mt-16 std-backdrop-blur"
+      className="grid z-30 items-center grid-cols-2 md:hidden px-6 py-5 fixed top-12 rounded-2xl bg-black/40 bg-gradient-to-r from-[#d9d9d908] max-w-[90%] w-full to-[#73737308] mt-12 sm:mt-16 std-backdrop-blur"
     >
       <ul className="flex flex-col gap-4 lg:gap-12 text-white/25">
         <Link

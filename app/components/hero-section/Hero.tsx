@@ -14,10 +14,9 @@ import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 import { useView } from "@/contexts/ViewContext";
 import { Canvas } from "@react-three/fiber";
-import {Hero3DScene} from "./Hero3DScene";
+
 import { OrbitControls } from "@react-three/drei";
 import dynamic from "next/dynamic";
-
 export default function Hero() {
   const handWaveAnimation = {
     rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
@@ -26,6 +25,7 @@ export default function Hero() {
       ease: easeInOut,
     },
   };
+  const Hero3DScene = dynamic(() => import("./Hero3DScene"), { ssr: false });
   const DynamicComponentWithNoSSR = dynamic(
     () => import("lottie-react"),
     { ssr: false,
@@ -85,15 +85,15 @@ export default function Hero() {
     >
       <div className="text sm:w-[60%]">
         <motion.div
-          className="grid grid-cols-9 w-fit smm:flex gap-2 mb-2 xl:mb-6 flex"
+          className="flex items-center mb-2 xl:mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.1, ease: "easeOut" }}
         >
-          <p className="text-white/60 text-xl smm:text-2xl mb-3 smm:mb-0 lg:text-3xl col-span-6">
+          <p className="text-white/60 text-xl smm:text-2xl mb-1 smm:mb-0 lg:text-3xl">
             Hey, there!
           </p>
-          {animationData && <DynamicComponentWithNoSSR style={{height:30}} loop={3} animationData={animationData} />}
+          {animationData && <DynamicComponentWithNoSSR style={{height:30, marginLeft: '0.5rem'}} loop={3} animationData={animationData} />}
         </motion.div>
         <motion.h1
           className="text-[32px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"

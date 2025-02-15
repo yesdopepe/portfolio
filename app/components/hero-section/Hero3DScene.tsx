@@ -29,7 +29,7 @@ function Model() {
   );
 }
 
-export function Hero3DScene() {
+export default function Hero3DScene() {
   return (
     <Suspense fallback={null}>
       <ambientLight intensity={0.5} />
