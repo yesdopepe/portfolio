@@ -58,7 +58,7 @@ export default function Works() {
           img={project.img?.formats?.large?.url || "/offset-folio.svg"} // Default image if none provided
           title={project.title}
           gitLink={project.gitLink || undefined}
-          liveLink={project.liveLink || "#"}
+          liveLink={project.liveLink || undefined}
           about={project.about || "Project description coming soon..."}
           stack={project.Stack.map(s => s.Tech)}
         />
