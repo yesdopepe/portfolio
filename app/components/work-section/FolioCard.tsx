@@ -51,13 +51,13 @@ export default function FolioCard({
           </h2>
           <div className="flex gap-3 md:gap-4 text-2xl sm:text-3xl xl:text-4xl">
             <Link
-              href={`${gitLink ? gitLink : "#"}`}
+              href={`${liveLink ? gitLink : "#"}`}
               className="rounded-full bg-icon-radial p-3 hover:bg-red"
               target="_blank"
               aria-label="View Github Repo"
               data-blobity-radius="34"
               data-blobity-magnetic="true"
-              {...(!gitLink && {
+              {...(!liveLink && {
                 "data-blobity-tooltip": "coming soon...",
               })}
             >
