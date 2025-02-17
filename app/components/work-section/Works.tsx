@@ -55,7 +55,7 @@ export default function Works() {
       {projects.map((project) => (
         <FolioCard
           key={project.id}
-          img={project.img?.formats?.large?.url || "/offset-folio.svg"} // Default image if none provided
+          img={project.img?.url || ""} // Default image if none provided
           title={project.title}
           gitLink={project.gitLink || undefined}
           liveLink={project.liveLink || undefined}
