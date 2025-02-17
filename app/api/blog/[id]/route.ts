@@ -32,3 +32,5 @@ export async function GET(
     return NextResponse.json({ error: 'Failed to fetch blog post' }, { status: 500 });
   }
 }
+
+export const fetchCache = 'force-no-store';

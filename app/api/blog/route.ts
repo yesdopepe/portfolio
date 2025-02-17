@@ -23,3 +23,5 @@ export async function GET() {
     );
   }
 }
+
+export const fetchCache = 'force-no-store';
