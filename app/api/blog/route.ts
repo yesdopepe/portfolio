@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import axios from "axios";
 
 const STRAPI_URL = process.env.STRAPI_URL;
@@ -12,12 +11,12 @@ export async function GET() {
         "Cache-Control": "no-store, max-age=0",
       },
     });
-    return NextResponse.json(response.data, {
+    return Response.json(response.data, {
       status: 200,
       headers: { "Cache-Control": "no-store, max-age=0" },
     });
   } catch (error) {
-    return NextResponse.json(
+    return Response.json(
       { error: "Failed to fetch blog posts" },
       { status: 500 }
     );

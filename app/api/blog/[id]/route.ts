@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import axios from 'axios';
 
 const STRAPI_URL = process.env.STRAPI_URL;
@@ -24,12 +23,12 @@ export async function GET(
     
     const post = response.data.data[0]; // Get the first matching post
     if (!post) {
-      return NextResponse.json({ error: 'Blog post not found' }, { status: 404 });
+      return Response.json({ error: 'Blog post not found' }, { status: 404 });
     }
     
-    return NextResponse.json({ data: post });
+    return Response.json({ data: post });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch blog post' }, { status: 500 });
+    return Response.json({ error: 'Failed to fetch blog post' }, { status: 500 });
   }
 }
 
